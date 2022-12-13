@@ -142,3 +142,112 @@ see the number of available tickets decreasing on the frontend. I should not
 be able to buy a ticket if the showing is sold out (if there are 0 tickets
 
 available). **No persistence is needed for this feature**.
+
+
+#Bonus Deliverables
+These bonus deliverables are here if you want an extra challenge and won't
+
+affect your score. **Make sure to commit your work to save your progress before
+
+attempting the bonus deliverables!**
+
+Click on a movie in the menu to replace the currently displayed movie's
+   details with the new movie's details. Note that you may have to make an
+
+   additional GET request to access the movie's details.
+
+When a movie is sold out (when there are no available tickets remaining),
+   indicate that the movie is sold out by changing the button text to "Sold
+
+   Out". Also update the film item in the `ul#films` menu by adding a class of
+
+   `sold-out` to the film. For reference, here's what the contents of the
+
+   `ul#films` element should look like with a sold out film:
+
+   ```html
+
+   <li class="film item">(Title of film)</li>
+
+   <li class="sold-out film item">(Title of a sold-out film)</li>
+
+   <li class="film item">(Title of film)</div>
+
+   ```
+
+# Extra Bonus
+These extra bonus deliverables involve using `fetch` to update data on the
+
+`json-server` backend by using `POST`, `PATCH`, and `DELETE` requests. These are
+
+meant for an extra, extra challenge and won't affect your grade. **Make sure to
+
+commit your work to save your progress before attempting the extra bonus
+
+deliverables!**
+
+When a ticket is purchased, persist the updated number of `tickets_sold` on
+   the server. Remember, the frontend shows the number of available tickets
+
+   based on the `tickets_sold` and the `capacity`, so only the `tickets_sold`
+
+   should be updated on the backend when a ticket is purchased. You will need to
+
+   make a request that follows this structure:
+
+   ```txt
+
+   PATCH /films/:id
+
+   Request Headers: {
+
+     Content-Type: application/json
+
+   }
+
+   Request Body: {
+
+     "tickets_sold": 28
+
+   }
+
+   ----
+
+   Example Response:
+
+   {
+
+      "id": "1",
+
+      "title": "The Giant Gila Monster",
+
+      "runtime": "108",
+
+      "capacity": 30,
+
+      "showtime": "04:00PM",
+
+      "tickets_sold": 28,
+
+      "description": "A giant lizard terrorizes a rural Texas community and a heroic teenager attempts to destroy the creature.",
+
+      "poster": "https://www.gstatic.com/tv/thumb/v22vodart/2157/p2157_v_v8_ab.jpg"
+
+   }
+
+   ```
+
+Delete a film from the server. Add a delete button next to each film in the
+   `ul#films` menu. When the button is clicked, remove the film from the list
+
+   and also delete the film on the server:
+
+   ```txt
+
+   DELETE /films/:id
+
+   Example Response:
+
+   {}
+
+   ```

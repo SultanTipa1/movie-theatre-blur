@@ -6,8 +6,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"
     />
-    <script src="./src/index.js"></script>
-    <link rel="stylesheet" href="./style.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- navbar -->
@@ -44,13 +44,11 @@
         <div class="ui cards" id="showing">
           <div class="card">
             <div id="title" class="title">[MOVIE TITLE]</div>
-            <div id="runtime" class="meta">[RUNTIME] minutes</div>
+            <div id="runtime" class="meta">[RUNTIME]</div>
+            minutes
             <div class="content">
-              <div class="description">
-                <div id="film-info">[MOVIE DESCRIPTION]</div>
-                <span id="showtime" class="ui label">[SHOWTIME]</span>
-                <span id="ticket-num">[X]</span> remaining tickets
-              </div>
+              <span id="showtime" class="ui label">[SHOWTIME]</span>
+              <span id="available-tickets">[X]</span> available tickets
             </div>
             <div class="more content">
               <button id="buy-ticket" class="ui orange button">
@@ -61,5 +59,6 @@
         </div>
       </div>
     </div>
+    <script src="./src/index.js"></script>
   </body>
 </html>

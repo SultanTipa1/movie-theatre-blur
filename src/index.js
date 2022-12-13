@@ -3,9 +3,6 @@ fetch("http://localhost:3000/films")
   .then((resp) => resp.json())
   .then((films) => renderFilms(films));
 
-// const buyTickets = document.querySelector("#buy-ticket");
-// buyTickets.addEventListener(`submit`, handleBuyTickets);
-
 const renderFilms = (films) => {
   // console.log(films);
   const filmsList = document.getElementById(`films`);
@@ -39,16 +36,9 @@ button.addEventListener(`click`, () => {
     document.getElementById(`available-tickets`).innerHTML
   );
   if (available_Tickets > 0) {
-    const availableTickets = available_Tickets -=1;
+    const availableTickets = available_Tickets - 1;
     document.getElementById(`available-tickets`).innerHTML = availableTickets;
   } else {
-    alert("sorry,tickets  are sold out.");
+    alert("sorry,tickets are sold out.");
   }
 });
-
-// function handleBuyTickets(films) {
-//   e.preventDefault();
-//   let buyTicket = (document.getElementById(
-//     "available-tickets"
-//   ).innerHTML = `${available_tickets} available tickets`);
-// }
